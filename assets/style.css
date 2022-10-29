@@ -1,0 +1,31 @@
+.header-box {
+  height: 100px;
+  width: 100%;
+  background-color: teal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.row {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.cell {
+  width: 200px;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  background-color: blanchedalmond;
+}
