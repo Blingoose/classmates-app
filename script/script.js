@@ -1,5 +1,4 @@
 const search = document.querySelector(".search");
-const btn = document.querySelector(".btn");
 
 // * Optimized for speed. The best I could.
 
@@ -84,43 +83,24 @@ const paintRow = (arrOfData) => {
 };
 
 function searchText(arr) {
-  btn.addEventListener("click", btnAction);
-  document.addEventListener("keyup", coolFunc);
-  search.addEventListener("input", bla);
+  search.addEventListener("input", inputFilter);
   const selectCells = document.querySelectorAll(".cell");
 
-  function coolFunc(e) {
-    if (e.key === "Enter") {
-    }
-  }
-  function btnAction(e) {}
-
-  function bla(e) {
+  function inputFilter(e) {
+    const allRows = document.querySelectorAll(".row");
+    const allCells = document.querySelectorAll(".cell");
+    console.log(arr);
     let text = e.target.value;
-    if (text !== "") {
-      for (let m = 0; m < arr.length; m++) {
-        arr[m].filter((el) => {
-          if (el.toString() === text) {
-            selectCells.classList.add("hidden");
-          }
-        });
-      }
-    } else {
-      return;
-    }
-  }
-}
 
-function paintSearch(arr) {
-  const table = document.querySelector(".table");
-  const row = document.createElement("div");
-  row.classList.add("row");
-  for (i = 0; i < arr.length; i++) {
-    const cell = document.createElement("div");
-    cell.textContent = arr[i];
-    cell.classList.add("cell");
-    row.append(cell);
-    table.append(row);
+    for (let row of allRows) {
+      let innerContent = row.innerText;
+      console.log(innerContent);
+      if (innerContent.indexOf(text) === -1) {
+        row.classList.add("hidden");
+      } else {
+        row.classList.remove("hidden");
+      }
+    }
   }
 }
 
