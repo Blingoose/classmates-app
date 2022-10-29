@@ -84,7 +84,6 @@ const paintRow = (arrOfData) => {
 
 function searchText(arr) {
   search.addEventListener("input", inputFilter);
-  const selectCells = document.querySelectorAll(".cell");
 
   function inputFilter(e) {
     const allRows = document.querySelectorAll(".row");
