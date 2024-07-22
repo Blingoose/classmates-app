@@ -1,1 +1,1 @@
-# Capsules
+# Classmates-App
